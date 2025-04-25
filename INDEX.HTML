@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohith P | Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Rohith P</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- home -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Hello, I’m Rohith P</h2>
+            <p>A Designer Who Judges a book by its <span>cover</span>... <br>Because if the cover does not impress you what else can? <br> A 19-year-old creative professional into UI/UX, Frontend, Graphics, Video & 2D Animation</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+    <!-- about -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="components/hero-image.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="section-title">About Me</h1>
+                    <p>I’m a passionate Graphic Designer, Video Editor, and UI/UX Developer from Kerala, India. My
+                        creative journey has taken me through the world of digital design, leading me to develop
+                        immersive experiences. Now, I’m venturing into the exciting world of VR game development, where
+                        design meets innovation.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span> <br>Designing web app interfaces</li>
+                            <li><span>Web Development</span> <br> web app development</li>
+                            <li><span>Graphic Designing</span> <br>craft versatile designs</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024- current</span> <br>freelancer</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024-2027</span> <br> immersive technology from trichy</li>
+                            <li><span>2022-2024</span> <br>computer science from trivandrum</li>
+                        </ul>
+                    </div>
+                   <a class="btns" href="https://wa.me/917907353440" target="_blank">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- projects -->
+    <section id="projects" class="projects section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Repeat this block for each project -->
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p>Short description about the project and the tools used.</p>
+                    <a href="project1-details.html">Read more →</a>
+                </div>
+         
+            <!-- ... -->
+        </div>
+    </section>
+    <!-- services -->
+    <section id="services" class="services section">
+        <h2 class="section-title">Services</h2>
+        <ul class="services-list">
+            <li>UI/UX Design</li>
+            <li>Frontend Development</li>
+            <li>Graphic Design</li>
+            <li>Video Editing</li>
+            <li>2D Animation</li>
+        </ul>
+    </section>
+    <!-- resume -->
+    <section id="resume" class="resume section">
+        <h2 class="section-title">Resume</h2>
+        <p>Download my resume for a detailed overview of my skills and experience.</p>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+    </section>
+    <!-- contact -->
+    <section id="contact" class="contact section">
+        <h2 class="section-title">Contact Me</h2>
+        <form action="https://formspree.io/f/yourformid" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2025 Rohith P. All rights reserved.</p>
+    </footer>
+    <!-- script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | Rohith P</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* About Section */
+/* General Styles */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.about-header .catchy-intro {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+.about-tabs {
+    margin-top: 40px;
+    text-align: left;
+}
+
+/* Tab Navigation */
+.tab-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-links li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.tab-links li:hover {
+    background-color: #ddd;
+}
+
+.tab-links .active {
+    border-bottom: 2px solid #000;
+}
+
+/* Tab Contents */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.timeline {
+    padding-left: 20px;
+}
+
+.timeline li {
+    margin: 10px 0;
+}
+
+.timeline strong {
+    color: #333;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <section id="about" class="about section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2>About Me</h2>
+                <p class="catchy-intro">I’m a passionate Graphic Designer, Video Editor, and UI/UX Developer from Kerala, India. My creative journey has taken me through the world of digital design, leading me to develop immersive experiences. Now, I’m venturing into the exciting world of VR game development, where design meets innovation.</p>
+            </div>
+
+            <div class="about-tabs">
+                <!-- Navigation for Tabs -->
+                <ul class="tab-links">
+                    <li class="active" onclick="showTab('skills')">Skills</li>
+                    <li onclick="showTab('education')">Education</li>
+                    <li onclick="showTab('work')">Work Experience</li>
+                </ul>
+
+                <!-- Tab Contents -->
+                <div id="skills" class="tab-content active">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>UI/UX Design</li>
+                        <li>Web Development (HTML, CSS, JS)</li>
+                        <li>VR Game Development</li>
+                        <li>Adobe Creative Suite (Photoshop, Illustrator, After Effects, Lightroom)</li>
+                        <li>Figma</li>
+                        <li>CapCut</li>
+                        <li>Logical Thinking & Problem Solving</li>
+                        <li>Strong Communication & Teamwork</li>
+                    </ul>
+                </div>
+
+                <div id="education" class="tab-content">
+                    <h3>Education</h3>
+                    <ul class="timeline">
+                        <li><strong>2021-2022:</strong> SSLC from GRFT High School, Valiyathura, Trivandrum</li>
+                        <li><strong>2022-2024:</strong> Computer Science Higher Secondary from St. Joseph's HSS, Trivandrum</li>
+                        <li><strong>2024 - Present:</strong> B.Voc. in Immersive Technology, Bharathidasan University, Trichy</li>
+                    </ul>
+                </div>
+
+                <div id="work" class="tab-content">
+                    <h3>Work Experience</h3>
+                    <ul>
+                        <li><strong>Industry Visits:</strong>
+                            <ul>
+                                <li>Vajra Global - MarTech solutions company (2025)</li>
+                                <li>NoQu - Tech company specializing in queue management solutions (2025)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Freelance Experience:</strong>
+                            <ul>
+                                <li>Freelance Graphic Designer (Remote)</li>
+                                <li>Freelance UI/UX Designer (Remote)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Function to switch tabs
+function showTab(tabName) {
+    // Hide all tabs
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Remove active class from all tab links
+    const tabLinks = document.querySelectorAll('.tab-links li');
+    tabLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Show the clicked tab and add active class to the clicked tab link
+    document.getElementById(tabName).classList.add('active');
+    document.querySelector(`.tab-links li[onclick="showTab('${tabName}')"]`).classList.add('active');
+}
+
+// Set the default tab to be 'skills' on page load
+document.addEventListener('DOMContentLoaded', () => {
+    showTab('skills');
+});
+
+    </script>
+</body>
+
+</html>
