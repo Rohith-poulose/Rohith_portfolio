@@ -303,7 +303,7 @@
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
   }
   
-  .project-card img {
+  #projectGrid img {
     width: 100%;
     display: block;
   }
@@ -316,7 +316,45 @@
     margin-bottom: 0.5rem;
     color: #00ffff;
   }
-  
+  .skills {
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff; /* Primary color */
+}
+
+.skill {
+    margin: 20px 0;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 10px;
+    background: #007bff; /* Same primary color */
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
   .services-list {
     display: flex;
     flex-wrap: wrap;
