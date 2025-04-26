@@ -324,6 +324,7 @@
 .skills-container {
     max-width: 800px;
     margin: 0 auto;
+    display: grid;
 }
 
 .skill-category {
@@ -349,11 +350,13 @@
 }
 
 .skill-level {
-    height: 10px;
-    background: #007bff; /* Same primary color */
-    width: 0%;
-    transition: width 1s ease-in-out;
+  height: 8px;
+  background-color: #007bff;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+  border-radius: 4px;
 }
+
 
   .services-list {
     display: flex;

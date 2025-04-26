@@ -58,11 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         });
+
+        // Attach the scroll animation only AFTER skills are loaded
+        window.addEventListener('scroll', animateSkills);
     });
 
-    // Animate progress bars on scroll
     function animateSkills() {
         const skillsSection = document.getElementById('skills');
+        if (!skillsSection) return; // Safety check
+
         const sectionTop = skillsSection.offsetTop;
         const sectionHeight = skillsSection.offsetHeight;
         const scrollPos = window.scrollY + window.innerHeight;
@@ -71,9 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.skill-level').forEach(bar => {
                 bar.style.width = bar.getAttribute('data-level');
             });
-            window.removeEventListener('scroll', animateSkills);
+            window.removeEventListener('scroll', animateSkills); // Remove after animating once
         }
     }
-
-    window.addEventListener('scroll', animateSkills);
 });
