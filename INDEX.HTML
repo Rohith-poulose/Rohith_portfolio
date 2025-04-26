@@ -98,16 +98,53 @@
     </section>
 
     <!-- services -->
-    <section id="services" class="services section">
-        <h2 class="section-title">Services</h2>
-        <ul class="services-list">
-            <li>UI/UX Design</li>
-            <li>Frontend Development</li>
-            <li>Graphic Design</li>
-            <li>Video Editing</li>
-            <li>2D Animation</li>
-        </ul>
-    </section>
+    <!-- services -->
+<section id="services" class="services section">
+    <h2 class="section-title">Services</h2>
+    <div class="services-container">
+        <div class="service-item" onclick="showDetails('uiux')">
+            <i class="fa fa-laptop-code"></i>
+            <h3>UI/UX Design</h3>
+            <p>Crafting seamless and interactive user experiences with intuitive interfaces.</p>
+            <div id="uiux" class="service-details">
+                <p>We design intuitive and engaging user interfaces to provide exceptional user experiences for web and mobile applications.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="showDetails('frontend')">
+            <i class="fa fa-code"></i>
+            <h3>Frontend Development</h3>
+            <p>Building responsive websites and applications with clean, optimized code.</p>
+            <div id="frontend" class="service-details">
+                <p>We focus on developing fast, responsive websites using the latest technologies like React, Angular, and Vue.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="showDetails('graphic')">
+            <i class="fa fa-paint-brush"></i>
+            <h3>Graphic Design</h3>
+            <p>Designing visuals that resonate with your audience and tell your brand story.</p>
+            <div id="graphic" class="service-details">
+                <p>We create stunning graphics that help communicate your brand identity across digital platforms.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="showDetails('video')">
+            <i class="fa fa-video"></i>
+            <h3>Video Editing</h3>
+            <p>Creating compelling video content that engages your audience effectively.</p>
+            <div id="video" class="service-details">
+                <p>Our video editing service helps you create engaging content to boost your brand’s presence online.</p>
+            </div>
+        </div>
+        <div class="service-item" onclick="showDetails('animation')">
+            <i class="fa fa-film"></i>
+            <h3>2D Animation</h3>
+            <p>Bringing illustrations and characters to life with smooth and engaging animations.</p>
+            <div id="animation" class="service-details">
+                <p>We specialize in creating eye-catching 2D animations for explainer videos, advertisements, and more.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- resume -->
     <section id="resume" class="resume section">
         <h2 class="section-title">Resume</h2>

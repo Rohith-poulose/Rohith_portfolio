@@ -79,3 +79,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to show service details when a service item is clicked
+    function showDetails(serviceId) {
+        const serviceDetails = document.getElementById(serviceId);
+
+        // Toggle visibility of the service details
+        if (serviceDetails.style.display === "block") {
+            serviceDetails.style.display = "none";
+        } else {
+            serviceDetails.style.display = "block";
+        }
+    }
+
+    // Attach the function to all service items
+    const serviceItems = document.querySelectorAll('.service-item');
+    serviceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const id = item.getAttribute('onclick').match(/'([^']+)'/)[1];
+            showDetails(id);
+        });
+    });
+});
