@@ -417,7 +417,7 @@ body {
 
 .service-item i {
   font-size: 3rem;
-  color: #6C63FF;
+  color: var(--main-color);
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
@@ -449,7 +449,14 @@ body {
   transition: background 0.3s ease;
 }
 
-.resume-description {
+.download-btn:hover {
+  background-color: #00ffff;
+  color: #0d0d0d;
+  padding: 0.8rem 1.5rem;
+  border: none;
+}
+.resume-description,
+.section-description {
   padding: 10PX;
   margin-top: 20px;
   font-size: 14px;
@@ -459,7 +466,7 @@ body {
 }
 
 
-.contact form {
+#contact form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -467,8 +474,8 @@ body {
   margin: auto;
 }
 
-.contact input,
-.contact textarea {
+#contact input,
+#contact textarea {
   padding: 1rem;
   border: none;
   border-radius: 8px;
@@ -476,7 +483,7 @@ body {
   color: #f2f2f2;
 }
 
-.contact button {
+#contact button {
   align-self: center;
   background: #00ffff;
   color: #0d0d0d;
@@ -487,8 +494,38 @@ body {
   font-weight: bold;
 }
 
-.contact button:hover {
+#contact button:hover {
   background: #00cccc;
+}
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+/* Loader Animation */
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .footer {

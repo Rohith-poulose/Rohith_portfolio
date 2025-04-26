@@ -80,25 +80,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to show service details when a service item is clicked
-    function showDetails(serviceId) {
-        const serviceDetails = document.getElementById(serviceId);
 
-        // Toggle visibility of the service details
-        if (serviceDetails.style.display === "block") {
-            serviceDetails.style.display = "none";
-        } else {
-            serviceDetails.style.display = "block";
-        }
-    }
 
-    // Attach the function to all service items
-    const serviceItems = document.querySelectorAll('.service-item');
-    serviceItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const id = item.getAttribute('onclick').match(/'([^']+)'/)[1];
-            showDetails(id);
-        });
-    });
+
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    var form = e.target;
+    var popup = document.getElementById('popup');
+    var loader = document.getElementById('loader');
+    var popupMessage = document.getElementById('popup-message');
+
+    // Show the popup and loader
+    popup.style.display = 'block';
+
+    // Start form submission (simulate form submission with timeout for demo purposes)
+    setTimeout(function() {
+        // Hide the loader after 3 seconds
+        loader.style.display = 'none';
+        popupMessage.innerHTML = 'Your request has been successfully sent!';
+        
+        // Simulate form data submission (replace with your actual form submission code)
+        // e.g., send the form data to the server, Google Sheets, etc.
+
+        // Clear the form after 2 seconds
+        setTimeout(function() {
+            form.reset(); // Clear all form inputs
+            popup.style.display = 'none'; // Hide the popup after 2 seconds
+        }, 2000);
+    }, 3000); // Simulating a delay of 3 seconds for form submission
 });
