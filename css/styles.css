@@ -85,7 +85,7 @@
   
   .hero {
     height: 100vh;
-    background:url(components/hero-image.jpg ) center/cover no-repeat;
+    background:url(images/hero-image.jpg ) center/cover no-repeat;
     background-attachment: fixed;
     display: flex;
     align-items: center;
@@ -284,7 +284,7 @@
     text-align: center;
   }
   
-  .project-grid {
+  #projectGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
