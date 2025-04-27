@@ -80,76 +80,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
-
-
-// document.getElementById('contact-form').addEventListener('submit', function(e) {
-//     e.preventDefault(); // Prevent the default form submission
-
-//     var form = e.target;
-//     var popup = document.getElementById('popup');
-//     var loader = document.getElementById('loader');
-//     var popupMessage = document.getElementById('popup-message');
-
-//     // Show the popup and loader
-//     popup.style.display = 'block';
-
-//     // Start form submission (simulate form submission with timeout for demo purposes)
-//     setTimeout(function() {
-//         // Hide the loader after 3 seconds
-//         loader.style.display = 'none';
-//         popupMessage.innerHTML = 'Your request has been successfully sent!';
-        
-//         // Simulate form data submission (replace with your actual form submission code)
-//         // e.g., send the form data to the server, Google Sheets, etc.
-
-//         // Clear the form after 2 seconds
-//         setTimeout(function() {
-//             form.reset(); // Clear all form inputs
-//             popup.style.display = 'none'; // Hide the popup after 2 seconds
-//         }, 2000);
-//     }, 3000); // Simulating a delay of 3 seconds for form submission
-// });
 // jQuery should be included already
 $(document).ready(function() {
+    // Attach submit event to your form
     $("#contact-form").submit(function(e) {
-        e.preventDefault(); // Prevent form from submitting the traditional way (refresh)
+        e.preventDefault(); // Prevent the default form action
 
-        // Debugging: Check if the event is properly triggered
-        console.log('Form submission intercepted.');
+        // Get the form data
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
 
-        // Show the "Sending..." message
-        $("#display").html("Sending...⏳");
+        popup();
 
-        var formData = {
-            name: $("#name").val(),
-            email: $("#email").val(),
-            message: $("#message").val()
-        };
+        // Simulate a 3-second wait for sending the message
+        setTimeout(function() {
+            $('#popup-message').text('Your message has been sent successfully!'); // Update the message
+        }, 2000); // 3 seconds delay
 
-        // Make AJAX request
+        // After another 3 seconds, hide the popup and loader
+        setTimeout(function() {
+            $('#popup-container').fadeOut(); // Hide the entire popup
+            $('#loading-spinner').fadeOut(); // Hide the loading spinner
+        }, 3000); // 6 seconds (3 seconds + 3 seconds)
+
+        // Perform the AJAX request to the Google Apps Script Web App
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwXJLLzdESNDF-oJ5-WApTUObP_kKXmL2bvPUEHGTqfhdWP9HPpladA-_50rshyNHCgkA/exec",
+            url: "https://script.google.com/macros/s/AKfycby7L5XaeZaXhCjyWrGcN7XDrHePlAdHMg6dUNbsmVMGglYGZoPx0RONV4rf3PBNHt3ZXg/exec", // Your Google Apps Script Web App URL
             type: "POST",
-            data: formData,
+            data: {
+                name: name,
+                email: email,
+                message: message
+            },
             success: function(response) {
-                $("#display").html("✅ Message Sent Successfully!");
-                // Clear the form fields after success
+                // Clear the input fields on success
                 $("#name").val('');
                 $("#email").val('');
                 $("#message").val('');
 
-                // Hide the success message after 3 seconds
-                setTimeout(function() {
-                    $("#display").fadeOut();
-                }, 3000);
+                // Optionally, you can add a success alert or message here
+                console.log("Message sent successfully!");
             },
             error: function(error) {
-                $("#display").html("❌ Error! Please try again.");
+                // Clear the input fields on error
+                $("#name").val('');
+                $("#email").val('');
+                $("#message").val('');
+
+                // Optionally, you can add an error alert or message here
+                console.log("Error sending message!");
             }
         });
-        
     });
-});console.log("Script is loaded");
+      // Function to show the popup and loader
+      function popup() {
+        $('#popup-container').show(); // Show the popup container
+        $('#popup-message').text('Your message is sending...'); // Show the initial message
+        $('#loading-spinner').show(); // Show the loading spinner
+    }
+});
+
+
+console.log("Script is loaded");
     

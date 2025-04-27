@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
 </head>
 
 <body>
@@ -173,13 +173,21 @@
             <!-- Contact Form -->
             <div class="contact-form-wrapper">
                 <form id="contact-form">
-                    <input type="text" id="name" name="name" placeholder="Your Name"  required/>
-                    <input type="email" id="email" name="email" placeholder="Your Email"  required/>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" required />
                     <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Submit</button>
+                    <button  onclick="popup()" type="submit">Submit</button>
                 </form>
+                <!-- Popup Container -->
+                <div id="popup-container" style="display: none;">
+                    <div id="popup-content">
+                        <div id="loading-spinner"></div>
+                        <p id="popup-message">Your message is sending to his pocket...</p>
+                    </div>
+                </div>
+
             </div>
-            <div id="display"></div> <!-- For success/error messages -->
+
             <!-- <div id="popup" class="popup">
                 <div id="loader" class="loader"></div>
                 <p id="popup-message">Your request has been sent.</p>
