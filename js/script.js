@@ -141,6 +141,12 @@ $(document).ready(function() {
     }
 });
 
+$(document).ready(function () {
+    // Toggle the menu visibility on hamburger click
+    $(".menu-toggle").click(function () {
+        $(".nav-links").toggleClass("active");
+    });
+});
 
 console.log("Script is loaded");
     
