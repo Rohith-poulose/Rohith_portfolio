@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
 </head>
 
 <body>
@@ -172,17 +172,18 @@
 
             <!-- Contact Form -->
             <div class="contact-form-wrapper">
-                <form id="contact-form" method="POST" action="https://script.google.com/macros/s/AKfycbyNqvWTUHHC9vjyLEwY8-JstDSeD6OoRHjhfRNVYGWz4v0NFa9RM3g198OK3HeO4W8k-g/exec">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                <form id="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Your Name"  required/>
+                    <input type="email" id="email" name="email" placeholder="Your Email"  required/>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Submit</button>
-                </form>                
+                </form>
             </div>
-            <div id="popup" class="popup">
+            <div id="display"></div> <!-- For success/error messages -->
+            <!-- <div id="popup" class="popup">
                 <div id="loader" class="loader"></div>
                 <p id="popup-message">Your request has been sent.</p>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- footer -->
@@ -197,7 +198,10 @@
     </footer>
 
     <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src='js/script.js'></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
 </body>
 
 </html>

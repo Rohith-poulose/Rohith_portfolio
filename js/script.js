@@ -84,30 +84,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the default form submission
+// document.getElementById('contact-form').addEventListener('submit', function(e) {
+//     e.preventDefault(); // Prevent the default form submission
 
-    var form = e.target;
-    var popup = document.getElementById('popup');
-    var loader = document.getElementById('loader');
-    var popupMessage = document.getElementById('popup-message');
+//     var form = e.target;
+//     var popup = document.getElementById('popup');
+//     var loader = document.getElementById('loader');
+//     var popupMessage = document.getElementById('popup-message');
 
-    // Show the popup and loader
-    popup.style.display = 'block';
+//     // Show the popup and loader
+//     popup.style.display = 'block';
 
-    // Start form submission (simulate form submission with timeout for demo purposes)
-    setTimeout(function() {
-        // Hide the loader after 3 seconds
-        loader.style.display = 'none';
-        popupMessage.innerHTML = 'Your request has been successfully sent!';
+//     // Start form submission (simulate form submission with timeout for demo purposes)
+//     setTimeout(function() {
+//         // Hide the loader after 3 seconds
+//         loader.style.display = 'none';
+//         popupMessage.innerHTML = 'Your request has been successfully sent!';
         
-        // Simulate form data submission (replace with your actual form submission code)
-        // e.g., send the form data to the server, Google Sheets, etc.
+//         // Simulate form data submission (replace with your actual form submission code)
+//         // e.g., send the form data to the server, Google Sheets, etc.
 
-        // Clear the form after 2 seconds
-        setTimeout(function() {
-            form.reset(); // Clear all form inputs
-            popup.style.display = 'none'; // Hide the popup after 2 seconds
-        }, 2000);
-    }, 3000); // Simulating a delay of 3 seconds for form submission
-});
+//         // Clear the form after 2 seconds
+//         setTimeout(function() {
+//             form.reset(); // Clear all form inputs
+//             popup.style.display = 'none'; // Hide the popup after 2 seconds
+//         }, 2000);
+//     }, 3000); // Simulating a delay of 3 seconds for form submission
+// });
+// jQuery should be included already
+$(document).ready(function() {
+    $("#contact-form").submit(function(e) {
+        e.preventDefault(); // Prevent form from submitting the traditional way (refresh)
+
+        // Debugging: Check if the event is properly triggered
+        console.log('Form submission intercepted.');
+
+        // Show the "Sending..." message
+        $("#display").html("Sending...⏳");
+
+        var formData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            message: $("#message").val()
+        };
+
+        // Make AJAX request
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbwXJLLzdESNDF-oJ5-WApTUObP_kKXmL2bvPUEHGTqfhdWP9HPpladA-_50rshyNHCgkA/exec",
+            type: "POST",
+            data: formData,
+            success: function(response) {
+                $("#display").html("✅ Message Sent Successfully!");
+                // Clear the form fields after success
+                $("#name").val('');
+                $("#email").val('');
+                $("#message").val('');
+
+                // Hide the success message after 3 seconds
+                setTimeout(function() {
+                    $("#display").fadeOut();
+                }, 3000);
+            },
+            error: function(error) {
+                $("#display").html("❌ Error! Please try again.");
+            }
+        });
+        
+    });
+});console.log("Script is loaded");
+    
