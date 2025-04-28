@@ -653,50 +653,6 @@ body {
   overflow-x: hidden;
 }
 
-/* @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-  .navbar{
-    align-items: start;
-  }
-  .nav-links {
-    flex-direction: column;
-    display: none;
-    gap: 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    margin: 0.5rem 0;
-  }
-  #about{
-    background: transparent
-  }
-  .about-col-1{
-    display: none;
-  }
-  .about-col-2{
-    flex-basis: 100%;
-  }
-} */
 
 /* ------------------ Responsive Design ------------------ */
 
