@@ -377,10 +377,10 @@ body {
   /* Important to hide overflow */
 }
 
-.services .section-title {
+.section-title {
   font-size: 2.5rem;
   margin-bottom: 30px;
-}
+} 
 
 .services-container {
   display: flex;
@@ -463,6 +463,7 @@ body {
   color: #555;
   max-width: 600px;
   margin: 10px auto;
+  text-align: center;
 }
 
 
@@ -572,48 +573,6 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    margin: 0.5rem 0;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 @keyframes slideInRight {
   from {
@@ -674,9 +633,165 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /* Message text */
 #popup-message {
   margin-top: 15px;
   font-size: 16px;
 }
+body {
+  overflow-x: hidden;
+}
+
+/* @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  .navbar{
+    align-items: start;
+  }
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    margin: 0.5rem 0;
+  }
+  #about{
+    background: transparent
+  }
+  .about-col-1{
+    display: none;
+  }
+  .about-col-2{
+    flex-basis: 100%;
+  }
+} */
+
+/* ------------------ Responsive Design ------------------ */
+
+@media (max-width: 1200px) {
+  header nav ul {
+    gap: 20px;
+  }
+  #hero {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  .navbar{
+    align-items: start;
+  }
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .about-col-1{
+    display: none;
+  }
+  .about-col-2{
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header nav ul.show {
+    display: flex;
+  }
+  #hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+  .btn, .btns {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .service-item{
+    width: 200px;
+  }
+  .service-item i{
+    font-size: 2rem;
+  }
+  .service-item h3{
+    font-size: 1rem;
+  }
+  .service-item p{
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .btn, .btns {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+   .section-title {
+    font-size: 1.5rem;
+  }
+  .about p{
+    font-size: 0.9rem;
+  }
+  .download-btn{
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
